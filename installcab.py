@@ -75,9 +75,9 @@ def get_winebin(arch):
     if (arch == 'win64' or arch == 'wow64') and winearch == 'win32':
         bad_exit("Invalid win64 assembly for win32 wineprefix!")
     elif arch == 'win32' or arch == 'wow64':
-        winebin = 'wine'
+        winebin = os.environ["WINE"]
     else:
-        winebin = 'wine64'
+        winebin = os.environ["WINE"]
     return winebin
 
 def check_dll_arch(dll_path):
